@@ -3,11 +3,16 @@ const week1task2btn = document.getElementById('week1task2btn');
 const week1task3btn = document.getElementById('week1task3btn');
 const week1task4btn = document.getElementById('week1task4btn');
 const week1task5btn = document.getElementById('week1task5btn');
+const week2day1task1btn = document.getElementById('week2day1task1btn');
+const week2day1task2btn = document.getElementById('week2day1task2btn');
+
 const week1tast1output = document.getElementById('week1tast1output');
 const week1tast2output = document.getElementById('week1tast2output');
 const week1tast3output = document.getElementById('week1tast3output');
 const week1tast4output = document.getElementById('week1tast4output');
 const week1tast5output = document.getElementById('week1tast5output');
+const week2day1task1output = document.getElementById('week2day1task1output');
+const week2day1task2output = document.getElementById('week2day1task2output');
 
 // zadanie pierwsze
 
@@ -97,8 +102,57 @@ function week1task5(){
   week1tast5output.innerText = reverseText2
 }
 
+// week2day1task1
+const week2day1task1 = ()=>{
+  function mathWork(num1,num2){
+    // druga wersja to
+    // const mathWork = (num1, num2) =>{
+    if (num2 === 0) return 'nie da rady podzielić przez zero'
+    week2day1task1output.innerHTML += (`<p>wynik dodawania to: ${num1} + ${num2} = ${num1+num2}</p>`)
+    week2day1task1output.innerHTML += (`<p>wynik dejmowania to: ${num1} - ${num2} = ${num1-num2}</p>`)
+    week2day1task1output.innerHTML += (`<p>wynik mnożenia to: ${num1} * ${num2} = ${num1*num2}</p>`)
+    week2day1task1output.innerHTML += (`<p>wynik dzielenia to: ${num1} / ${num2} = ${num1/num2}</p>`)
+      return (
+    console.log('wynik dodawania to: ', num1, ' + ', num2, " = ", num1+num2),
+    console.log('wynik odejmowania to: ', num1, ' - ', num2, " = ", num1-num2),
+    console.log('wynik mnożenia to: ', num1, ' * ', num2, " = ", num1*num2),
+    console.log('wynik dzielenia to: ', num1, ' / ', num2, " = ", num1/num2)
+      )
+  }
+  const numero1 = Number(prompt('podaj pierwszą liczbę'));
+  const numero2 = Number(prompt('podaj drugą liczbę'));
+  mathWork(numero1, numero2)
+  }
+
+//week2day1task2
+const week2day1task2 = ()=>{
+  function checkNumber(number){
+    if(number % 2) {return even(number)
+    } else {
+      return odd(number)
+    } 
+    return 'to nie jest poprawna liczba'
+  };
+
+  const even = number => {
+    console.log(number);
+    week2day1task2output.innerHTML = `<p>${number}</p>`
+  };
+  
+  const odd = number => {
+    console.log(number*2);
+    week2day1task2output.innerHTML = `<p>${number*2}</p>`
+  }
+  
+  const number = prompt('Podaj liczbę')
+
+  checkNumber(number);
+}
+
 week1task1btn.addEventListener('click', week1task1);
 week1task2btn.addEventListener('click', week1task2);
 week1task3btn.addEventListener('click', week1task3);
 week1task4btn.addEventListener('click', week1task4);
 week1task5btn.addEventListener('click', week1task5);
+week2day1task1btn.addEventListener('click', week2day1task1);
+week2day1task2btn.addEventListener('click', week2day1task2);
