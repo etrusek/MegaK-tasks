@@ -5,6 +5,7 @@ const week1task4btn = document.getElementById('week1task4btn');
 const week1task5btn = document.getElementById('week1task5btn');
 const week2day1task1btn = document.getElementById('week2day1task1btn');
 const week2day1task2btn = document.getElementById('week2day1task2btn');
+const week2day2task1btn = document.getElementById('week2day2task1btn');
 
 const week1tast1output = document.getElementById('week1tast1output');
 const week1tast2output = document.getElementById('week1tast2output');
@@ -12,7 +13,7 @@ const week1tast3output = document.getElementById('week1tast3output');
 const week1tast4output = document.getElementById('week1tast4output');
 const week1tast5output = document.getElementById('week1tast5output');
 const week2day1task1output = document.getElementById('week2day1task1output');
-const week2day1task2output = document.getElementById('week2day1task2output');
+const week2day2task1output = document.getElementById('week2day2task1output');
 
 // zadanie pierwsze
 
@@ -148,6 +149,29 @@ const week2day1task2 = ()=>{
 
   checkNumber(number);
 }
+//week2day2task1
+const week2day2task1 = () =>{
+
+
+function Pers(name, surname) {
+  this.name = name;
+  this.surname = surname;
+  this.sayHello = function (){
+      console.log('Hello ' + this.name + ' ' + this.surname);
+      }
+  }
+  
+  const urArr = [];
+  for (let i =0; i<3;i++){
+    const inName = prompt('Podaj imię ' + i);
+    const inSurname = prompt('Podaj nazwisko ' + i);
+    const userNew = new Pers(inName, inSurname);
+    // urArr.push(new Pers(prompt('Podaj imię ' + i), prompt('Podaj nazwisko ' + i)));
+  week2day2task1output.innerHTML += `<p>Osoba ${i} to ${userNew.name} ${userNew.surname}</p>`
+  urArr.push(userNew);
+  }
+  console.log(urArr)
+}
 
 week1task1btn.addEventListener('click', week1task1);
 week1task2btn.addEventListener('click', week1task2);
@@ -156,3 +180,4 @@ week1task4btn.addEventListener('click', week1task4);
 week1task5btn.addEventListener('click', week1task5);
 week2day1task1btn.addEventListener('click', week2day1task1);
 week2day1task2btn.addEventListener('click', week2day1task2);
+week2day2task1btn.addEventListener('click', week2day2task1);

@@ -168,6 +168,35 @@
     <p>Wynik z konsoli:</p>
     <p id='week2day1task2output'></p>
   </section>
+
+  <section>
+    <h3>Zadanie 1 06-07-2021 week2day2task1 kod</h3>
+    <code>
+      function Pers(name, surname) {<br>
+        this.name = name;<br>
+        this.surname = surname;<br>
+        this.sayHello = function (){<br>
+            console.log('Hello ' + this.name + ' ' + this.surname);<br>
+            }<br>
+        }<br>
+        <br>
+        const urArr = [];<br>
+        for (let i =0; i&lt;3;i++){<br>
+        const inName = prompt('Podaj imię ' + i);<br>
+        const inSurname = prompt('Podaj nazwisko ' + i);<br>
+        const userNew = new Pers(inName, inSurname);<br>
+        urArr.push(userNew);<br>
+        }<br>
+        console.log(urArr)<br>
+      
+      <br>
+    </code>
+    <br>
+    <button id="week2day2task1btn">Uruchom Zadanie 1 06-07-2021 week2day2 kod</button>
+    <p>Wynik z konsoli:</p>
+    <p id='week2day2task1output'></p>
+  </section>
+
   <script src="index.js"></script>
 </body>
 
