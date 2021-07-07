@@ -6,6 +6,8 @@ const week1task5btn = document.getElementById('week1task5btn');
 const week2day1task1btn = document.getElementById('week2day1task1btn');
 const week2day1task2btn = document.getElementById('week2day1task2btn');
 const week2day2task1btn = document.getElementById('week2day2task1btn');
+const week2day3task1btn = document.getElementById('week2day3task1btn');
+const week2day3task2btn = document.getElementById('week2day3task2btn');
 
 const week1tast1output = document.getElementById('week1tast1output');
 const week1tast2output = document.getElementById('week1tast2output');
@@ -14,6 +16,8 @@ const week1tast4output = document.getElementById('week1tast4output');
 const week1tast5output = document.getElementById('week1tast5output');
 const week2day1task1output = document.getElementById('week2day1task1output');
 const week2day2task1output = document.getElementById('week2day2task1output');
+const week2day3task1output = document.getElementById('week2day3task1output');
+const week2day3task2output = document.getElementById('week2day3task2output');
 
 // zadanie pierwsze
 
@@ -173,6 +177,39 @@ function Pers(name, surname) {
   console.log(urArr)
 }
 
+//week2day3task1
+const week2day3task1 = ()=>{
+  const obj = {
+    id: 1,
+    name: 'Tester Testowy',
+    pwdHash: 'qwertyuioplkjhgfdsa1234567890',
+    isAdmin: true,
+    hasAvatar: true,
+  }
+ 
+  function filter(obj){
+    const {id, name, hasAvatar} = obj;
+    const obj1 = {id, name, hasAvatar};
+    week2day3task1output.innerHTML = `{ ${obj.id}, ${obj.name}, ${obj.hasAvatar} }`
+    return obj1
+  }
+  console.log(filter(obj))
+}
+
+
+//week2day3task2
+const week2day3task2 = ()=>{
+  const name = "Smdb Test";
+  const age = 35;
+  const role = "Admin";
+  const info = name + 'has a role od ' + role + ' and is brn in year ' + (new Date().getFullYear() - age);
+  const infoTempl = `${name} has a role od ${role} and is brn in year ${new Date().getFullYear() - age}`;
+  week2day3task2output.innerHTML = `<p>const info = name + 'has a role od ' + role + ' and is brn in year ' + (new Date().getFullYear() - age);</p>
+  <p>${info}</p>
+  <p>const infoTempl = \`\${name} has a role od \${role} and is brn in year \${new Date().getFullYear() - age}\`;</p>
+  <p>${infoTempl}</p>`
+}
+
 week1task1btn.addEventListener('click', week1task1);
 week1task2btn.addEventListener('click', week1task2);
 week1task3btn.addEventListener('click', week1task3);
@@ -181,3 +218,5 @@ week1task5btn.addEventListener('click', week1task5);
 week2day1task1btn.addEventListener('click', week2day1task1);
 week2day1task2btn.addEventListener('click', week2day1task2);
 week2day2task1btn.addEventListener('click', week2day2task1);
+week2day3task1btn.addEventListener('click', week2day3task1);
+week2day3task2btn.addEventListener('click', week2day3task2);

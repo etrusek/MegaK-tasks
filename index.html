@@ -9,87 +9,124 @@
 </head>
 
 <body>
-
   <section>
-    <h3>Zadanie 1 kod</h3>
+    <h3>Zadanie 2 07-07-2021 week2day3task2 kod</h3>
     <code>
-      const name = prompt('Podaj imię') <br>
-      const surname = prompt('Podaj nazwisko') <br>
-      const age = prompt('Podaj wiek') <br><br>
-
-      if (age >= 18) { <br>
-      console.log(`Nazywasz się ${surname} ${name}, masz ${age}`) <br>
-      } <br>
+      
+      
+      <br>
     </code>
     <br>
-    <button id="week1task1btn">Uruchom Zadanie 1</button>
+    <button id="week2day3task2btn">Uruchom Zadanie 2 07-07-2021 week2day3 kod</button>
     <p>Wynik z konsoli:</p>
-    <p id='week1tast1output'></p>
+    <p id='week2day3task2output'></p>
   </section>
 
   <section>
-    <h3>Zadanie 2 kod</h3>
+    <h3>Zadanie 1 07-07-2021 week2day3task1 kod</h3>
     <code>
-      const firstNumber = prompt('Podaj pierwszą liczbę')<br>
-      const secondNumber = prompt('Podaj drugą liczbę')<br>
-      const symbol = prompt('Podaj znak: +, -, * lub / ')<br>
-      <br>
-      if (symbol == '+') {<br>
-        console.log(Number(firstNumber) + Number(secondNumber))<br>
-      } else if (symbol == '-') {<br>
-        console.log(Number(firstNumber) - Number(secondNumber))<br>
-      } else if (symbol == '*') {<br>
-        console.log(Number(firstNumber) * Number(secondNumber))<br>
-      } else if (symbol == '/') {<br>
-        console.log(Number(firstNumber) / Number(secondNumber))<br>
-      } else {<br>
-        console.log('podany znak jest nieprawidłowy');<br>
+      const obj = {<br>
+        id: 1,<br>
+        name: 'Tester Testowy',<br>
+        pwdHash: 'qwertyuioplkjhgfdsa1234567890',<br>
+        isAdmin: true,<br>
+        hasAvatar: true,<br>
       }<br>
       <br>
+      function filter(obj){<br>
+        const {id, name, hasAvatar} = obj;<br>
+        const obj1 = {id, name, hasAvatar};<br>
+        return obj1<br>
+      }<br>
+      console.log(filter(obj))<br>
+      
+      <br>
     </code>
     <br>
-    <button id="week1task2btn">Uruchom Zadanie 2</button>
+    <button id="week2day3task1btn">Uruchom Zadanie 1 07-07-2021 week2day3 kod</button>
     <p>Wynik z konsoli:</p>
-    <p id='week1tast2output'></p>
+    <p id='week2day3task1output'></p>
   </section>
-
+  
   <section>
-    <h3>Zadanie 3 kod</h3>
+    <h3>Zadanie 1 06-07-2021 week2day2task1 kod</h3>
     <code>
-      const sentence = prompt('Podaj wyrażenie');<br>
-        for (let i = 0; i <= sentence.length; i++) {<br>
-          if (i % 2) {<br>
-            console.log(sentence[i].toLocaleLowerCase());<br>
-          } else {<br>
-            console.log(sentence[i].toUpperCase());<br>
+      function Pers(name, surname) {<br>
+        this.name = name;<br>
+        this.surname = surname;<br>
+        this.sayHello = function (){<br>
+            console.log('Hello ' + this.name + ' ' + this.surname);<br>
             }<br>
-          }<br>
+        }<br>
+        <br>
+        const urArr = [];<br>
+        for (let i =0; i&lt;3;i++){<br>
+        const inName = prompt('Podaj imię ' + i);<br>
+        const inSurname = prompt('Podaj nazwisko ' + i);<br>
+        const userNew = new Pers(inName, inSurname);<br>
+        urArr.push(userNew);<br>
+        }<br>
+        console.log(urArr)<br>
+      
       <br>
     </code>
     <br>
-    <button id="week1task3btn">Uruchom Zadanie 3</button>
+    <button id="week2day2task1btn">Uruchom Zadanie 1 06-07-2021 week2day2 kod</button>
     <p>Wynik z konsoli:</p>
-    <p id='week1tast3output'></p>
+    <p id='week2day2task1output'></p>
   </section>
-
+  
   <section>
-    <h3>Zadanie dodatkowe 04-07-2021 sobota/niedziela kod</h3>
+    <h3>Zadanie 2 05-07-2021 week2day1task2 kod</h3>
     <code>
-      const startText = "Jestem tutaj";<br>
-      let reverseText = "";<br>
+      function checkNumber(number){<br>
+        if(number % 2) {return even(number)<br>
+        } else {<br>
+          return odd(number)<br>
+        } <br>
+        return 'to nie jest poprawna liczba'<br>
+      };<br>
       <br>
-      //Pętla<br>
-      for (let i = 0; i < startText.length; i++){<br>
-        reverseText += startText[startText.length - i - 1]<br>
-      }<br>
-      console.log(reverseText);<br>
+      const even = number => (number);<br>
+      <br>
+      const odd = number => number*2;<br>
+      <br>
+      const number = prompt('Podaj liczbę')<br>
+      <br>
+      checkNumber(number);<br>
+      
       <br>
     </code>
     <br>
-    <button id="week1task4btn">Uruchom dodatkowe 04-07-2021 sobota/niedziela</button>
+    <button id="week2day1task2btn">Uruchom Zadanie 2 05-07-2021 week2day1 kod</button>
     <p>Wynik z konsoli:</p>
-    <p id='week1tast4output'></p>
+    <p id='week2day1task2output'></p>
   </section>
+  
+  <section>
+    <h3>Zadanie 05-07-2021 week2day1task1 kod</h3>
+    <code>
+      function mathWork(num1,num2){<br>
+        // druga wersja to<br>
+        // const mathWork = (num1, num2) =>{<br>
+        console.log('wynik dodawania to: ', num1, ' + ', num2, " = ", num1+num2);<br>
+        console.log('wynik odejmowania to: ', num1, ' - ', num2, " = ", num1-num2);<br>
+        console.log('wynik mnożenia to: ', num1, ' * ', num2, " = ", num1*num2);<br>
+        console.log('wynik dzielenia to: ', num1, ' / ', num2, " = ", num1/num2);<br>
+        }<br>
+      const numero1 = Number(prompt('podaj pierwszą liczbę'));<br>
+      const numero2 = Number(prompt('podaj drugą liczbę'));<br>
+      <br>
+      mathWork(numero1, numero2)<br>
+      
+      <br>
+    </code>
+    <br>
+    <button id="week2day1task1btn">Uruchom Zadanie 05-07-2021 week2day1</button>
+    <p>Wynik z konsoli:</p>
+    <p id='week2day1task1output'></p>
+  </section>
+  
   <section>
     <h3>Zadanie dodatkowe 04-07-2021 sobota/niedziela kod</h3>
     <code>
@@ -117,84 +154,86 @@
     <p>Wynik z konsoli:</p>
     <p id='week1tast5output'></p>
   </section>
-
+  
   <section>
-    <h3>Zadanie 05-07-2021 week2day1task1 kod</h3>
+    <h3>Zadanie dodatkowe 04-07-2021 sobota/niedziela kod</h3>
     <code>
-      function mathWork(num1,num2){<br>
-        // druga wersja to<br>
-        // const mathWork = (num1, num2) =>{<br>
-        console.log('wynik dodawania to: ', num1, ' + ', num2, " = ", num1+num2);<br>
-        console.log('wynik odejmowania to: ', num1, ' - ', num2, " = ", num1-num2);<br>
-        console.log('wynik mnożenia to: ', num1, ' * ', num2, " = ", num1*num2);<br>
-        console.log('wynik dzielenia to: ', num1, ' / ', num2, " = ", num1/num2);<br>
-        }<br>
-      const numero1 = Number(prompt('podaj pierwszą liczbę'));<br>
-      const numero2 = Number(prompt('podaj drugą liczbę'));<br>
+      const startText = "Jestem tutaj";<br>
+      let reverseText = "";<br>
       <br>
-      mathWork(numero1, numero2)<br>
-      
+      //Pętla<br>
+      for (let i = 0; i < startText.length; i++){<br>
+        reverseText += startText[startText.length - i - 1]<br>
+      }<br>
+      console.log(reverseText);<br>
       <br>
     </code>
     <br>
-    <button id="week2day1task1btn">Uruchom Zadanie 05-07-2021 week2day1</button>
+    <button id="week1task4btn">Uruchom dodatkowe 04-07-2021 sobota/niedziela</button>
     <p>Wynik z konsoli:</p>
-    <p id='week2day1task1output'></p>
+    <p id='week1tast4output'></p>
   </section>
-
+  
   <section>
-    <h3>Zadanie 2 05-07-2021 week2day1task2 kod</h3>
+    <h3>Zadanie 3 kod</h3>
     <code>
-      function checkNumber(number){<br>
-        if(number % 2) {return even(number)<br>
-        } else {<br>
-          return odd(number)<br>
-        } <br>
-        return 'to nie jest poprawna liczba'<br>
-      };<br>
-      <br>
-      const even = number => (number);<br>
-      <br>
-      const odd = number => number*2;<br>
-      <br>
-      const number = prompt('Podaj liczbę')<br>
-      <br>
-      checkNumber(number);<br>
-      
-      <br>
-    </code>
-    <br>
-    <button id="week2day1task2btn">Uruchom Zadanie 2 05-07-2021 week2day1 kod</button>
-    <p>Wynik z konsoli:</p>
-    <p id='week2day1task2output'></p>
-  </section>
-
-  <section>
-    <h3>Zadanie 1 06-07-2021 week2day2task1 kod</h3>
-    <code>
-      function Pers(name, surname) {<br>
-        this.name = name;<br>
-        this.surname = surname;<br>
-        this.sayHello = function (){<br>
-            console.log('Hello ' + this.name + ' ' + this.surname);<br>
+      const sentence = prompt('Podaj wyrażenie');<br>
+        for (let i = 0; i <= sentence.length; i++) {<br>
+          if (i % 2) {<br>
+            console.log(sentence[i].toLocaleLowerCase());<br>
+          } else {<br>
+            console.log(sentence[i].toUpperCase());<br>
             }<br>
-        }<br>
-        <br>
-        const urArr = [];<br>
-        for (let i =0; i&lt;3;i++){<br>
-        const inName = prompt('Podaj imię ' + i);<br>
-        const inSurname = prompt('Podaj nazwisko ' + i);<br>
-        const userNew = new Pers(inName, inSurname);<br>
-        urArr.push(userNew);<br>
-        }<br>
-        console.log(urArr)<br>
-      
+          }<br>
       <br>
     </code>
     <br>
-    <button id="week2day2task1btn">Uruchom Zadanie 1 06-07-2021 week2day2 kod</button>
+    <button id="week1task3btn">Uruchom Zadanie 3</button>
     <p>Wynik z konsoli:</p>
-    <p id='week2day2task1output'></p>
+    <p id='week1tast3output'></p>
+  </section>
+  
+  <section>
+    <h3>Zadanie 2 kod</h3>
+    <code>
+      const firstNumber = prompt('Podaj pierwszą liczbę')<br>
+      const secondNumber = prompt('Podaj drugą liczbę')<br>
+      const symbol = prompt('Podaj znak: +, -, * lub / ')<br>
+      <br>
+      if (symbol == '+') {<br>
+        console.log(Number(firstNumber) + Number(secondNumber))<br>
+      } else if (symbol == '-') {<br>
+        console.log(Number(firstNumber) - Number(secondNumber))<br>
+      } else if (symbol == '*') {<br>
+        console.log(Number(firstNumber) * Number(secondNumber))<br>
+      } else if (symbol == '/') {<br>
+        console.log(Number(firstNumber) / Number(secondNumber))<br>
+      } else {<br>
+        console.log('podany znak jest nieprawidłowy');<br>
+      }<br>
+      <br>
+    </code>
+    <br>
+    <button id="week1task2btn">Uruchom Zadanie 2</button>
+    <p>Wynik z konsoli:</p>
+    <p id='week1tast2output'></p>
+  </section>
+  
+  <section>
+    <h3>Zadanie 1 kod</h3>
+    <code>
+      const name = prompt('Podaj imię') <br>
+      const surname = prompt('Podaj nazwisko') <br>
+      const age = prompt('Podaj wiek') <br><br>
+
+      if (age >= 18) { <br>
+      console.log(`Nazywasz się ${surname} ${name}, masz ${age}`) <br>
+      } <br>
+    </code>
+    <br>
+    <button id="week1task1btn">Uruchom Zadanie 1</button>
+    <p>Wynik z konsoli:</p>
+    <p id='week1tast1output'></p>
   </section>
 
   <script src="index.js"></script>
