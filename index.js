@@ -8,6 +8,7 @@ const week2day1task2btn = document.getElementById('week2day1task2btn');
 const week2day2task1btn = document.getElementById('week2day2task1btn');
 const week2day3task1btn = document.getElementById('week2day3task1btn');
 const week2day3task2btn = document.getElementById('week2day3task2btn');
+const week2day4task1btn = document.getElementById('week2day4task1btn');
 
 const week1tast1output = document.getElementById('week1tast1output');
 const week1tast2output = document.getElementById('week1tast2output');
@@ -18,6 +19,7 @@ const week2day1task1output = document.getElementById('week2day1task1output');
 const week2day2task1output = document.getElementById('week2day2task1output');
 const week2day3task1output = document.getElementById('week2day3task1output');
 const week2day3task2output = document.getElementById('week2day3task2output');
+const week2day4task1output = document.getElementById('week2day4task1output');
 
 // zadanie pierwsze
 
@@ -209,6 +211,35 @@ const week2day3task2 = ()=>{
   <p>const infoTempl = \`\${name} has a role od \${role} and is brn in year \${new Date().getFullYear() - age}\`;</p>
   <p>${infoTempl}</p>`
 }
+//week2day4task1
+const week2day4task1 = ()=>{
+
+  class Medals{
+    constructor(medalsList){
+      this.medalsList = medalsList;
+    }
+  }
+  Medals.prototype.addMedals = function (medalsToAdd){
+    for(let i=0;i<3;i++){
+      this.medalsList[i] += medalsToAdd[i];
+    }
+  }
+
+  const poland = new Medals([0,1,3])
+  poland.addMedals([0,10,1])
+
+  const england = new Medals([1,2,1])
+  england.addMedals([1,2,3])
+  week2day4task1output.innerHTML = `<p>Polska ma: <br>
+${poland.medalsList[0]} medali złotych<br>
+${poland.medalsList[1]} medali srebrnych<br>
+${poland.medalsList[2]} medali brązowych<br>
+Anglia ma: <br>
+${england.medalsList[0]} medali złotych<br>
+${england.medalsList[1]} medali srebrnych<br>
+${england.medalsList[2]} medali brązowych<br>
+</p>`
+}
 
 week1task1btn.addEventListener('click', week1task1);
 week1task2btn.addEventListener('click', week1task2);
@@ -220,3 +251,4 @@ week2day1task2btn.addEventListener('click', week2day1task2);
 week2day2task1btn.addEventListener('click', week2day2task1);
 week2day3task1btn.addEventListener('click', week2day3task1);
 week2day3task2btn.addEventListener('click', week2day3task2);
+week2day4task1btn.addEventListener('click', week2day4task1);
