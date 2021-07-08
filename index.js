@@ -215,22 +215,35 @@ const week2day3task2 = ()=>{
 const week2day4task1 = ()=>{
 
   class Medals{
-    constructor(medalsList){
+    constructor(country, medalsList){
+      this.country = country;
       this.medalsList = medalsList;
+      this.isTheBest= function(){
+        if(this.medalsList[0] > 0){
+          console.log(`${this.country} GRATULACJE ZA ZłOTY MEDAL`);
+          week2day4task1output.innerHTML += `<p> ${this.country} GRATULACJE ZA ZŁOTY MEDAL</p>`
+        }
+      }
     }
+
   }
+
   Medals.prototype.addMedals = function (medalsToAdd){
     for(let i=0;i<3;i++){
       this.medalsList[i] += medalsToAdd[i];
     }
   }
+  week2day4task1output.innerHTML = ""
+  const poland = new Medals('POLSKA',[0,1,3]);
+  poland.addMedals([2,2,2]);
+  poland.addMedals([3,3,3]);
+  poland.isTheBest();
 
-  const poland = new Medals([0,1,3])
-  poland.addMedals([0,10,1])
-
-  const england = new Medals([1,2,1])
-  england.addMedals([1,2,3])
-  week2day4task1output.innerHTML = `<p>Polska ma: <br>
+  const england = new Medals('ANGLIA',[1,2,1]);
+  england.addMedals([1,1,1]);
+  england.addMedals([2,2,2]);
+  england.isTheBest();
+  week2day4task1output.innerHTML += `<p>Polska ma: <br>
 ${poland.medalsList[0]} medali złotych<br>
 ${poland.medalsList[1]} medali srebrnych<br>
 ${poland.medalsList[2]} medali brązowych<br>
