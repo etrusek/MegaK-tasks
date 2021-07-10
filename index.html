@@ -10,6 +10,31 @@
 
 <body>
 <section>
+  <h3>week2day5task123 kod</h3>
+  <code>
+    const grades = [3, 4, 5, 6, 3, 4, 2, 5, 6];<br>
+    //zadanie 1<br>
+    let meanGrade = 0;<br>
+    grades.forEach(gr => meanGrade+=gr);<br>
+    console.log(`Średnia ocen to ${meanGrade}`)<br>
+    //zadanie 2<br>
+    const gradesGreatherThan3 = grades.filter(gr => gr>3)<br>
+    console.log(`Oceny min 4 to: ${gradesGreatherThan3}`)<br>
+    //zadanie 3<br>
+    const cities = ['Wrocław', 'Poznań', 'Kraków', 'Warszawa', 'Katowice', 'Bytom', 'Jelenia Góra', 'Jastrzębie-Zdrój', 'Rabka-Zdrój'];<br>
+    cities<br>
+    &ensp;.filter(city => !(city.length%2))<br>
+    &ensp;.map(city => city.toUpperCase())<br>
+    &ensp;.forEach(city => console.log(city))<br>
+
+    <br>
+  </code>
+  <br>
+  <button id="week2day5task1btn">Uruchom week2dat5task123</button>
+  <p>Wynik z konsoli:</p>
+  <p id='week2day5task1output'></p>
+</section>
+<section>
   <h3>week2day4task1 kod</h3>
   <code>
     class Medals{

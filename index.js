@@ -9,6 +9,7 @@ const week2day2task1btn = document.getElementById('week2day2task1btn');
 const week2day3task1btn = document.getElementById('week2day3task1btn');
 const week2day3task2btn = document.getElementById('week2day3task2btn');
 const week2day4task1btn = document.getElementById('week2day4task1btn');
+const week2day5task1btn = document.getElementById('week2day5task1btn');
 
 const week1tast1output = document.getElementById('week1tast1output');
 const week1tast2output = document.getElementById('week1tast2output');
@@ -20,6 +21,7 @@ const week2day2task1output = document.getElementById('week2day2task1output');
 const week2day3task1output = document.getElementById('week2day3task1output');
 const week2day3task2output = document.getElementById('week2day3task2output');
 const week2day4task1output = document.getElementById('week2day4task1output');
+const week2day5task1output = document.getElementById('week2day5task1output');
 
 // zadanie pierwsze
 
@@ -225,6 +227,12 @@ const week2day4task1 = ()=>{
         }
       }
     }
+    isGood(){
+      if(this.medalsList[1]>0){
+        console.log('jest dobrze');
+        week2day4task1output.innerHTML += `<p> ${this.country} GRATULACJE ZA srebrny MEDAL</p>`
+      }
+    }
 
   }
 
@@ -237,11 +245,13 @@ const week2day4task1 = ()=>{
   const poland = new Medals('POLSKA',[0,1,3]);
   poland.addMedals([2,2,2]);
   poland.addMedals([3,3,3]);
+  poland.isGood();
   poland.isTheBest();
 
   const england = new Medals('ANGLIA',[1,2,1]);
   england.addMedals([1,1,1]);
   england.addMedals([2,2,2]);
+  england.isGood();
   england.isTheBest();
   week2day4task1output.innerHTML += `<p>Polska ma: <br>
 ${poland.medalsList[0]} medali złotych<br>
@@ -252,6 +262,28 @@ ${england.medalsList[0]} medali złotych<br>
 ${england.medalsList[1]} medali srebrnych<br>
 ${england.medalsList[2]} medali brązowych<br>
 </p>`
+}
+
+//week2day5task1
+const week2day5task1 = ()=>{
+  const grades = [3, 4, 5, 6, 3, 4, 2, 5, 6];
+  let meanGrade = 0;
+  grades.forEach(gr => meanGrade+=gr);
+  const gradesGreatherThan3 = grades.filter(gr => gr>3)
+  console.log(`Średnia ocen to ${meanGrade}`)
+  week2day5task1output.innerHTML = `<p>Średnia ocen to ${meanGrade}</p>`;
+  console.log(`Oceny min 4 to: ${gradesGreatherThan3}`)
+  week2day5task1output.innerHTML += `<p>Oceny min 4 to: ${gradesGreatherThan3}</p>`;
+  const cities = ['Wrocław', 'Poznań', 'Kraków', 'Warszawa', 'Katowice', 'Bytom', 'Jelenia Góra', 'Jastrzębie-Zdrój', 'Rabka-Zdrój'];
+  const newCities = cities
+                        .filter(city => !(city.length%2))
+                        .map(city => `<p>${city.toUpperCase()}</p>`)
+
+  cities
+      .filter(city => !(city.length%2))
+      .map(city => city.toUpperCase())
+      .forEach(city => console.log(city))
+  week2day5task1output.innerHTML += `<p> ${newCities}</p>`;
 }
 
 week1task1btn.addEventListener('click', week1task1);
@@ -265,3 +297,5 @@ week2day2task1btn.addEventListener('click', week2day2task1);
 week2day3task1btn.addEventListener('click', week2day3task1);
 week2day3task2btn.addEventListener('click', week2day3task2);
 week2day4task1btn.addEventListener('click', week2day4task1);
+week2day5task1btn.addEventListener('click', week2day5task1);
+
