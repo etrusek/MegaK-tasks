@@ -9,6 +9,22 @@
 </head>
 
 <body>
+<section>
+  <h3>Zadanie 1 13-07-2021 week3day2task1 kod</h3>
+  <code>
+    const isbnNumber = prompt('Podaj numer isbn');<br>
+    fetch(`https://googleapis.com/boks/v1/volumes?q=isbn:${isbnNumber}`)<br>
+    .then(response => response.json())<br>
+    .then(data => console.log(data))<br>
+    .catch(err =>console.log('Nie znalazłem takiej książki', err))<br>
+
+    <br>
+  </code>
+  <br>
+  <button id="week3day2task1btn">Uruchom Zadanie 1 13-07-2021 week3day2 kod</button>
+  <p>Wynik z konsoli:</p>
+  <p id='week3day2task1output'></p>
+</section>
   <section>
     <h3>Zadanie 2 07-07-2021 week2day3task2 kod</h3>
     <code>

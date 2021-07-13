@@ -8,6 +8,7 @@ const week2day1task2btn = document.getElementById('week2day1task2btn');
 const week2day2task1btn = document.getElementById('week2day2task1btn');
 const week2day3task1btn = document.getElementById('week2day3task1btn');
 const week2day3task2btn = document.getElementById('week2day3task2btn');
+const week3day2task1btn = document.getElementById('week3day2task1btn');
 
 const week1tast1output = document.getElementById('week1tast1output');
 const week1tast2output = document.getElementById('week1tast2output');
@@ -18,6 +19,7 @@ const week2day1task1output = document.getElementById('week2day1task1output');
 const week2day2task1output = document.getElementById('week2day2task1output');
 const week2day3task1output = document.getElementById('week2day3task1output');
 const week2day3task2output = document.getElementById('week2day3task2output');
+const week3day2task1output = document.getElementById('week3day2task1output');
 
 // zadanie pierwsze
 
@@ -210,6 +212,15 @@ const week2day3task2 = ()=>{
   <p>${infoTempl}</p>`
 }
 
+//week3day2task1
+const week3day2task1 = ()=>{
+  const isbnNumber = prompt('Podaj numer isbn');
+  fetch(`https://googleapis.com/boks/v1/volumes?q=isbn:${isbnNumber}`)
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(err =>console.log('Nie znalazłem takiej książki', err))
+}
+
 week1task1btn.addEventListener('click', week1task1);
 week1task2btn.addEventListener('click', week1task2);
 week1task3btn.addEventListener('click', week1task3);
@@ -220,3 +231,4 @@ week2day1task2btn.addEventListener('click', week2day1task2);
 week2day2task1btn.addEventListener('click', week2day2task1);
 week2day3task1btn.addEventListener('click', week2day3task1);
 week2day3task2btn.addEventListener('click', week2day3task2);
+week3day2task1btn.addEventListener('click', week3day2task1);
