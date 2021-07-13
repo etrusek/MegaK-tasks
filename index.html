@@ -10,25 +10,88 @@
 
 <body>
 <section>
-  <h3>Zadanie 1 13-07-2021 week3day2task1 kod</h3>
+  <h3>week2day4task1 kod</h3>
   <code>
     const isbnNumber = prompt('Podaj numer isbn');<br>
     fetch(`https://googleapis.com/boks/v1/volumes?q=isbn:${isbnNumber}`)<br>
     .then(response => response.json())<br>
     .then(data => console.log(data))<br>
     .catch(err =>console.log('Nie znalazłem takiej książki', err))<br>
+    <br>
+  </code>
+  <br>
+  <button id="week3day2task1btn">Uruchom week3dat2task1</button>
+  <p>Wynik z konsoli:</p>
+  <p id='week3day2task1output'></p>
+</section>
+<section>
+  <h3>week2day5task123 kod</h3>
+  <code>
+    const grades = [3, 4, 5, 6, 3, 4, 2, 5, 6];<br>
+    //zadanie 1<br>
+    let meanGrade = 0;<br>
+    grades.forEach(gr => meanGrade+=gr);<br>
+    console.log(`Średnia ocen to ${meanGrade}`)<br>
+    //zadanie 2<br>
+    const gradesGreatherThan3 = grades.filter(gr => gr>3)<br>
+    console.log(`Oceny min 4 to: ${gradesGreatherThan3}`)<br>
+    //zadanie 3<br>
+    const cities = ['Wrocław', 'Poznań', 'Kraków', 'Warszawa', 'Katowice', 'Bytom', 'Jelenia Góra', 'Jastrzębie-Zdrój', 'Rabka-Zdrój'];<br>
+    cities<br>
+    &ensp;.filter(city => !(city.length%2))<br>
+    &ensp;.map(city => city.toUpperCase())<br>
+    &ensp;.forEach(city => console.log(city))<br>
+>>>>>>> d730ffea351a3c629798ef13069c319f395755c5
+
+    <br>
+  </code>
+  <button id="week2day5task1btn">Uruchom week2dat5task123</button>
+  <p>Wynik z konsoli:</p>
+  <p id='week2day5task1output'></p>
+</section>
+<section>
+  <h3>week2day4task1 kod</h3>
+  <code>
+    class Medals{
+    &ensp;constructor(country, medalsList){<br>
+    &ensp;&ensp;this.country = country;<br>
+    &ensp;&ensp;this.medalsList = medalsList;<br>
+    &ensp;&ensp;this.isTheBest= function(){<br>
+    &ensp;&ensp;&ensp;if(this.medalsList[0] > 0){<br>
+    &ensp;&ensp;&ensp;&ensp;console.log(`${this.country} GRATULACJE ZA ZŁOTY MEDAL`);<br>
+    &ensp;&ensp;&ensp;}<br>
+    &ensp;&ensp;}<br>
+    &ensp;}<br>
+    }<br>
+    <br>
+    Medals.prototype.addMedals = function (medalsToAdd){<br>
+    &ensp;for(let i=0;i<3;i++){<br>
+    &ensp;&ensp;this.medalsList[i] += medalsToAdd[i];<br>
+    &ensp;}<br>
+    }<br>
+    const poland = new Medals('POLSKA',[0,1,3]);<br>
+    poland.addMedals([2,2,2]);<br>
+    poland.addMedals([3,3,3]);<br>
+    poland.isTheBest();<br>
+    <br>
+    const england = new Medals('ANGLIA',[1,2,1]);<br>
+    england.addMedals([1,1,1]);<br>
+    england.addMedals([2,2,2]);<br>
+    england.isTheBest();<br>
 
     <br>
   </code>
   <br>
-  <button id="week3day2task1btn">Uruchom Zadanie 1 13-07-2021 week3day2 kod</button>
+  <button id="week2day4task1btn">Uruchom week2dat4task1</button>
   <p>Wynik z konsoli:</p>
-  <p id='week3day2task1output'></p>
+  <p id='week2day4task1output'></p>
 </section>
+
+>>>>>>> d730ffea351a3c629798ef13069c319f395755c5
   <section>
     <h3>Zadanie 2 07-07-2021 week2day3task2 kod</h3>
     <code>
-      
+
       
       <br>
     </code>
