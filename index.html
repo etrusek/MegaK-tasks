@@ -12,11 +12,14 @@
 <section>
   <h3>week3day2task1 kod</h3>
   <code>
-    const isbnNumber = prompt('Podaj numer isbn');<br>
-    fetch(`https://googleapis.com/boks/v1/volumes?q=isbn:${isbnNumber}`)<br>
+    const isbnNumber = prompt('Podaj numer isbn. np. 9780553804577'); <br>
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=isbn:${isbnNumber}`)<br>
     .then(response => response.json())<br>
-    .then(data => console.log(data))<br>
-    .catch(err =>console.log('Nie znalazłem takiej książki', err))<br>
+    .then(data => {<br>
+    console.log('Tytuł ksiązki to: ',data.items[0].volumeInfo.title);<br>
+    console.log('Autor ksiązki to: ',data.items[0].volumeInfo.authors);<br>
+    })
+    .catch(err =>console.log('Nie znalazłem takiej książki', err))
     <br>
   </code>
   <br>
@@ -24,7 +27,7 @@
   <p>Wynik z konsoli:</p>
   <p id='week3day2task1output'></p>
 </section>
-<section>
+<section hidden>
   <h3>week2day5task123 kod</h3>
   <code>
     const grades = [3, 4, 5, 6, 3, 4, 2, 5, 6];<br>
@@ -41,15 +44,13 @@
     &ensp;.filter(city => !(city.length%2))<br>
     &ensp;.map(city => city.toUpperCase())<br>
     &ensp;.forEach(city => console.log(city))<br>
->>>>>>> d730ffea351a3c629798ef13069c319f395755c5
-
     <br>
   </code>
   <button id="week2day5task1btn">Uruchom week2dat5task123</button>
   <p>Wynik z konsoli:</p>
   <p id='week2day5task1output'></p>
 </section>
-<section>
+<section hidden>
   <h3>week2day4task1 kod</h3>
   <code>
     class Medals{
@@ -87,8 +88,8 @@
   <p id='week2day4task1output'></p>
 </section>
 
->>>>>>> d730ffea351a3c629798ef13069c319f395755c5
-  <section>
+
+  <section hidden>
     <h3>Zadanie 2 07-07-2021 week2day3task2 kod</h3>
     <code>
 
@@ -101,7 +102,7 @@
     <p id='week2day3task2output'></p>
   </section>
 
-  <section>
+  <section hidden>
     <h3>Zadanie 1 07-07-2021 week2day3task1 kod</h3>
     <code>
       const obj = {<br>
@@ -127,7 +128,7 @@
     <p id='week2day3task1output'></p>
   </section>
   
-  <section>
+  <section hidden>
     <h3>Zadanie 1 06-07-2021 week2day2task1 kod</h3>
     <code>
       function Pers(name, surname) {<br>
@@ -155,7 +156,7 @@
     <p id='week2day2task1output'></p>
   </section>
   
-  <section>
+  <section hidden>
     <h3>Zadanie 2 05-07-2021 week2day1task2 kod</h3>
     <code>
       function checkNumber(number){<br>
@@ -182,7 +183,7 @@
     <p id='week2day1task2output'></p>
   </section>
   
-  <section>
+  <section hidden>
     <h3>Zadanie 05-07-2021 week2day1task1 kod</h3>
     <code>
       function mathWork(num1,num2){<br>
@@ -206,7 +207,7 @@
     <p id='week2day1task1output'></p>
   </section>
   
-  <section>
+  <section hidden>
     <h3>Zadanie dodatkowe 04-07-2021 sobota/niedziela kod</h3>
     <code>
       const startText2 = "Hejka, tutaj Beata 'betka' Kowalska!";<br>
@@ -234,7 +235,7 @@
     <p id='week1tast5output'></p>
   </section>
   
-  <section>
+  <section hidden>
     <h3>Zadanie dodatkowe 04-07-2021 sobota/niedziela kod</h3>
     <code>
       const startText = "Jestem tutaj";<br>
@@ -253,7 +254,7 @@
     <p id='week1tast4output'></p>
   </section>
   
-  <section>
+  <section hidden>
     <h3>Zadanie 3 kod</h3>
     <code>
       const sentence = prompt('Podaj wyrażenie');<br>
@@ -272,7 +273,7 @@
     <p id='week1tast3output'></p>
   </section>
   
-  <section>
+  <section hidden>
     <h3>Zadanie 2 kod</h3>
     <code>
       const firstNumber = prompt('Podaj pierwszą liczbę')<br>
@@ -298,7 +299,7 @@
     <p id='week1tast2output'></p>
   </section>
   
-  <section>
+  <section hidden>
     <h3>Zadanie 1 kod</h3>
     <code>
       const name = prompt('Podaj imię') <br>

@@ -290,11 +290,21 @@ const week2day5task1 = ()=>{
 
 //week3day2task1
 const week3day2task1 = ()=>{
-  const isbnNumber = prompt('Podaj numer isbn');
-  fetch(`https://googleapis.com/boks/v1/volumes?q=isbn:${isbnNumber}`)
+  const isbnNumber = prompt('Podaj numer isbn. np. 9780553804577');
+  const example = 9780553804577
+  fetch(`https://www.googleapis.com/books/v1/volumes?q=isbn:${isbnNumber}`)
       .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(err =>console.log('Nie znalazłem takiej książki', err))
+      .then(data => {
+        console.log('Tytuł ksiązki to: ',data.items[0].volumeInfo.title);
+        console.log('Autor ksiązki to: ',data.items[0].volumeInfo.authors);
+        week3day2task1output.innerHTML += `<p> Tytuł ksiązki to: ${data.items[0].volumeInfo.title}</p>`;
+        week3day2task1output.innerHTML += `<p> Autor ksiązki to: ${data.items[0].volumeInfo.authors}</p>`;
+      })
+      .catch(err =>{
+        console.log('Nie znalazłem takiej książki', err);
+        week3day2task1output.innerHTML += `<p> Nie znalazłem takiej książki</p>`;
+      })
+
 }
 
 week1task1btn.addEventListener('click', week1task1);
