@@ -1,3 +1,5 @@
+// const {setTimeout} = require('timers/promises');
+
 const week1task1btn = document.getElementById('week1task1btn');
 const week1task2btn = document.getElementById('week1task2btn');
 const week1task3btn = document.getElementById('week1task3btn');
@@ -11,6 +13,7 @@ const week2day3task2btn = document.getElementById('week2day3task2btn');
 const week2day4task1btn = document.getElementById('week2day4task1btn');
 const week2day5task1btn = document.getElementById('week2day5task1btn');
 const week3day2task1btn = document.getElementById('week3day2task1btn');
+const week3day3task1btn = document.getElementById('week3day3task1btn');
 
 const week1tast1output = document.getElementById('week1tast1output');
 const week1tast2output = document.getElementById('week1tast2output');
@@ -24,6 +27,7 @@ const week2day3task2output = document.getElementById('week2day3task2output');
 const week2day4task1output = document.getElementById('week2day4task1output');
 const week2day5task1output = document.getElementById('week2day5task1output');
 const week3day2task1output = document.getElementById('week3day2task1output');
+const week3day3task1output = document.getElementById('week3day3task1output');
 
 
 // zadanie pierwsze
@@ -307,6 +311,21 @@ const week3day2task1 = ()=>{
 
 }
 
+//week3day3task1
+const week3day3task1 = ()=>{
+  const isbnNumber = prompt('Podaj numer isbn. np. 9780553804577');
+  const googleBooks = async () =>{
+    const responseFromGoogleBoks = await fetch(`https://www.googleapis.com/books/v1/volumes?q=isbn:${isbnNumber}`)
+    const data = await responseFromGoogleBoks.json()
+    const {title, authors} = data.items[0].volumeInfo
+      console.log('Tytuł ksiązki to: ',title);
+      console.log('Autor ksiązki to: ',authors);
+      week3day3task1output.innerHTML += `<p> Tytuł ksiązki to: ${title}</p>`;
+      week3day3task1output.innerHTML += `<p> Autor ksiązki to: ${authors}</p>`;
+    }
+  googleBooks()
+}
+
 week1task1btn.addEventListener('click', week1task1);
 week1task2btn.addEventListener('click', week1task2);
 week1task3btn.addEventListener('click', week1task3);
@@ -320,3 +339,4 @@ week2day3task2btn.addEventListener('click', week2day3task2);
 week2day4task1btn.addEventListener('click', week2day4task1);
 week2day5task1btn.addEventListener('click', week2day5task1);
 week3day2task1btn.addEventListener('click', week3day2task1);
+week3day3task1btn.addEventListener('click', week3day3task1);

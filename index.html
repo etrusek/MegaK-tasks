@@ -8,7 +8,25 @@
   <title>Week 1 tasks</title>
 </head>
 
-<body>
+<body><section>
+  <h3>week3day3task1 kod</h3>
+  <code>
+    const isbnNumber = prompt('Podaj numer isbn. np. 9780553804577');<br>
+    const googleBooks = async () =>{<br>
+    const responseFromgoogleBooks = await fetch(`https://www.googleapis.com/books/v1/volumes?q=isbn:${isbnNumber}`)<br>
+    const data = await responseFromgoogleBooks.json()<br>
+    const {title, authors} = data.items[0].volumeInfo<br>
+    console.log('Tytuł ksiązki to: ',title);<br>
+    console.log('Autor ksiązki to: ',authors);<br>
+    }<br>
+    googleBooks()<br>
+    <br>
+  </code>
+  <br>
+  <button id="week3day3task1btn">Uruchom week3dat3task1</button>
+  <p>Wynik z konsoli:</p>
+  <p id='week3day3task1output'></p>
+</section>
 <section>
   <h3>week3day2task1 kod</h3>
   <code>
