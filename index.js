@@ -14,6 +14,7 @@ const week2day4task1btn = document.getElementById('week2day4task1btn');
 const week2day5task1btn = document.getElementById('week2day5task1btn');
 const week3day2task1btn = document.getElementById('week3day2task1btn');
 const week3day3task1btn = document.getElementById('week3day3task1btn');
+const week3day5task123btn = document.getElementById('week3day5task123btn');
 
 const week1tast1output = document.getElementById('week1tast1output');
 const week1tast2output = document.getElementById('week1tast2output');
@@ -28,6 +29,7 @@ const week2day4task1output = document.getElementById('week2day4task1output');
 const week2day5task1output = document.getElementById('week2day5task1output');
 const week3day2task1output = document.getElementById('week3day2task1output');
 const week3day3task1output = document.getElementById('week3day3task1output');
+const week3day5task123output = document.getElementById('week3day5task123output');
 
 
 // zadanie pierwsze
@@ -326,6 +328,134 @@ const week3day3task1 = ()=>{
   googleBooks()
 }
 
+//week3day5task1
+const week3day5task1btnGood = document.querySelector('.w3d5t1good');
+const week3day5task1btnBad = document.querySelector('.w3d5t1bad');
+const week3day5task1btnClear = document.querySelector('.w3d5t1clear');
+const week3day5task1output = document.querySelector('.ww3d5t1output');
+
+let moodGood = localStorage.getItem('moodGood');
+let moodBad = localStorage.getItem('moodBad');
+
+
+
+if(moodGood===null && moodBad===null){
+  localStorage.setItem('moodGood', '0');
+  localStorage.setItem('moodBad', '0');
+  moodGood = localStorage.getItem('moodGood');
+  moodBad = localStorage.getItem('moodBad');
+  }
+const printOutput = ()=>{
+  week3day5task1output.innerText = `Do tej pory kliknąłeś ${moodGood} razy dobrze, ${moodBad} razy żle.`
+}
+printOutput()
+
+
+const addMoodGood = ()=>{
+  localStorage.setItem('moodGood', String(++moodGood));
+  printOutput();
+}
+const addMoodBad = ()=>{
+  localStorage.setItem('moodBad', String(++moodBad));
+  printOutput();
+}
+const moodClear = ()=>{
+  localStorage.removeItem('moodGood');
+  localStorage.removeItem('moodBad');
+  moodGood = localStorage.getItem('moodGood') || 0;
+  moodBad = localStorage.getItem('moodBad') || 0;
+  printOutput()
+}
+
+week3day5task1btnGood.addEventListener('click', addMoodGood)
+week3day5task1btnBad.addEventListener('click', addMoodBad)
+week3day5task1btnClear.addEventListener('click', moodClear)
+
+
+//week3day5task2
+const w3d5t2btngood = document.querySelector('.w3d5t2btngood');
+const w3d5t2btnbad = document.querySelector('.w3d5t2btnbad');
+const w3d5t2btnclear = document.querySelector('.w3d5t2btnclear');
+const w3d5t2output = document.querySelector('.w3d5t2output');
+
+if(localStorage.getItem('w3d5t2moods')===null){
+  const w3d5t2moods = {
+    w3d5t2moodGood: 0,
+    w3d5t2moodBad: 0,
+  }
+  localStorage.setItem('w3d5t2moods', JSON.stringify(w3d5t2moods))
+}
+
+let w3d5t2moodGood = JSON.parse(localStorage.getItem('w3d5t2moods')).w3d5t2moodGood;
+let w3d5t2moodBad = JSON.parse(localStorage.getItem('w3d5t2moods')).w3d5t2moodGood;
+
+const w3d5t2printOutput = ()=>{
+  w3d5t2output.innerText = `Do tej pory kliknąłeś ${w3d5t2moodGood} razy dobrze, ${w3d5t2moodBad} razy żle.`
+}
+
+w3d5t2printOutput();
+
+
+const w3d5t2addMoodGood = ()=>{
+  const w3d5t2moods = {
+    w3d5t2moodGood: w3d5t2moodGood++,
+    w3d5t2moodBad,
+  }
+  localStorage.setItem('w3d5t2moods', JSON.stringify(w3d5t2moods))
+  w3d5t2printOutput();
+}
+const w3d5t2addMoodBad = ()=>{
+  const w3d5t2moods = {
+    w3d5t2moodGood,
+    w3d5t2moodBad: w3d5t2moodBad++,
+  }
+  localStorage.setItem('w3d5t2moods', JSON.stringify(w3d5t2moods))
+  w3d5t2printOutput();
+}
+const w3d5t2moodClear = ()=>{
+  const w3d5t2moods = {
+    w3d5t2moodGood: 0,
+    w3d5t2moodBad: 0,
+  }
+  localStorage.setItem('w3d5t2moods', JSON.stringify(w3d5t2moods))
+  w3d5t2moodGood = 0;
+  w3d5t2moodBad = 0;
+  w3d5t2printOutput()
+}
+
+w3d5t2btngood.addEventListener('click', w3d5t2addMoodGood)
+w3d5t2btnbad.addEventListener('click', w3d5t2addMoodBad)
+w3d5t2btnclear.addEventListener('click', w3d5t2moodClear)
+
+//w3d5t3
+const w3d5t3btnAddNumber = document.querySelector('.w3d5t3btnAddNumber')
+const w3d5t3output = document.querySelector('.w3d5t3output')
+
+let w3d5t3arr = JSON.parse(localStorage.getItem('w3d5t3')) || new Array();
+
+const w3d5t3printOutput = ()=>{
+  let sum = 0;
+  w3d5t3arr.forEach(num => sum+=Number(num));
+  w3d5t3output.innerHTML = `<p>Podane liczny to: ${w3d5t3arr}</p>
+<p>Suma tych liczb to: ${sum}</p>`;
+}
+w3d5t3printOutput();
+
+const w3d5t3 = ()=>{
+  const w3d5t3number = prompt('Podaj liczbę')
+  w3d5t3arr.push(w3d5t3number);
+  localStorage.setItem('w3d5t3', JSON.stringify(w3d5t3arr));
+  w3d5t3printOutput()
+}
+
+w3d5t3btnAddNumber.addEventListener('click', w3d5t3)
+
+//  w3d5tEND
+const week3day5task123 = ()=>{
+  console.log('działam')
+
+}
+
 week1task1btn.addEventListener('click', week1task1);
 week1task2btn.addEventListener('click', week1task2);
 week1task3btn.addEventListener('click', week1task3);
@@ -340,3 +470,4 @@ week2day4task1btn.addEventListener('click', week2day4task1);
 week2day5task1btn.addEventListener('click', week2day5task1);
 week3day2task1btn.addEventListener('click', week3day2task1);
 week3day3task1btn.addEventListener('click', week3day3task1);
+week3day5task123btn.addEventListener('click', week3day5task123);

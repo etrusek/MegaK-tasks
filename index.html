@@ -8,7 +8,199 @@
   <title>Week 1 tasks</title>
 </head>
 
-<body><section>
+<body>
+<section>
+  <h3>week3day5task123</h3>
+  <article>
+    <h1>Zadanie 1 </h1>
+    <p>Jak się czujesz?</p>
+    <menu>
+      <button class="w3d5t1good">Dobrze</button>
+      <button class="w3d5t1bad">Żle</button>
+      <button class="w3d5t1clear">Wyczyść</button>
+    </menu>
+    <p class="ww3d5t1output">0</p>
+  </article>
+  <article>
+    <h1>Zadanie 2 </h1>
+    <p>Jak się czujesz?</p>
+    <menu>
+      <button class="w3d5t2btngood">Dobrze</button>
+      <button class="w3d5t2btnbad">Żle</button>
+      <button class="w3d5t2btnclear">Wyczyść</button>
+    </menu>
+    <p class="w3d5t2output">0</p>
+  </article>
+  <article>
+    <h1>Zadanie 3 </h1>
+    <menu>
+      <button class="w3d5t3btnAddNumber">Kliknij i podaj liczbę</button>
+
+    </menu>
+    <p class="w3d5t3output">0</p>
+  </article>
+  <code>
+<h2>plik index.js</h2>
+    //week3day5task1<br>
+    const week3day5task1btnGood = document.querySelector('.w3d5t1good');<br>
+    const week3day5task1btnBad = document.querySelector('.w3d5t1bad');<br>
+    const week3day5task1btnClear = document.querySelector('.w3d5t1clear');<br>
+    const week3day5task1output = document.querySelector('.ww3d5t1output');<br>
+    <br>
+    let moodGood = localStorage.getItem('moodGood');<br>
+    let moodBad = localStorage.getItem('moodBad');<br>
+    <br>
+    if(moodGood===null && moodBad===null){<br>
+    localStorage.setItem('moodGood', '0');<br>
+    localStorage.setItem('moodBad', '0');<br>
+    moodGood = localStorage.getItem('moodGood');<br>
+    moodBad = localStorage.getItem('moodBad');<br>
+    }<br>
+    const printOutput = ()=>{<br>
+    week3day5task1output.innerText = `Do tej pory kliknąłeś ${moodGood} razy dobrze, ${moodBad} razy żle.`<br>
+    }<br>
+    printOutput()<br>
+    <br>
+    <br>
+    const addMoodGood = ()=>{<br>
+    localStorage.setItem('moodGood', String(++moodGood));<br>
+    printOutput();<br>
+    }<br>
+    const addMoodBad = ()=>{<br>
+    localStorage.setItem('moodBad', String(++moodBad));<br>
+    printOutput();<br>
+    }<br>
+    const moodClear = ()=>{<br>
+    localStorage.removeItem('moodGood');<br>
+    localStorage.removeItem('moodBad');<br>
+    moodGood = localStorage.getItem('moodGood') || 0;<br>
+    moodBad = localStorage.getItem('moodBad') || 0;<br>
+    printOutput()<br>
+    }<br>
+    <br>
+    week3day5task1btnGood.addEventListener('click', addMoodGood)<br>
+    week3day5task1btnBad.addEventListener('click', addMoodBad)<br>
+    week3day5task1btnClear.addEventListener('click', moodClear)<br>
+    <br>
+    <br>
+    //week3day5task2<br>
+    const w3d5t2btngood = document.querySelector('.w3d5t2btngood');<br>
+    const w3d5t2btnbad = document.querySelector('.w3d5t2btnbad');<br>
+    const w3d5t2btnclear = document.querySelector('.w3d5t2btnclear');<br>
+    const w3d5t2output = document.querySelector('.w3d5t2output');<br>
+    <br>
+    if(localStorage.getItem('w3d5t2moods')===null){<br>
+    const w3d5t2moods = {<br>
+    w3d5t2moodGood: 0,<br>
+    w3d5t2moodBad: 0,<br>
+    }<br>
+    localStorage.setItem('w3d5t2moods', JSON.stringify(w3d5t2moods))<br>
+    }<br>
+    <br>
+    let w3d5t2moodGood = JSON.parse(localStorage.getItem('w3d5t2moods')).w3d5t2moodGood;<br>
+    let w3d5t2moodBad = JSON.parse(localStorage.getItem('w3d5t2moods')).w3d5t2moodGood;<br>
+    <br>
+    const w3d5t2printOutput = ()=>{<br>
+    w3d5t2output.innerText = `Do tej pory kliknąłeś ${w3d5t2moodGood} razy dobrze, ${w3d5t2moodBad} razy żle.`<br>
+    }<br>
+    <br>
+    w3d5t2printOutput();<br>
+    <br>
+    <br>
+    const w3d5t2addMoodGood = ()=>{<br>
+    const w3d5t2moods = {<br>
+    w3d5t2moodGood: w3d5t2moodGood++,<br>
+    w3d5t2moodBad,<br>
+    }<br>
+    localStorage.setItem('w3d5t2moods', JSON.stringify(w3d5t2moods))<br>
+    w3d5t2printOutput();<br>
+    }<br>
+    const w3d5t2addMoodBad = ()=>{<br>
+    const w3d5t2moods = {<br>
+    w3d5t2moodGood,<br>
+    w3d5t2moodBad: w3d5t2moodBad++,<br>
+    }<br>
+    localStorage.setItem('w3d5t2moods', JSON.stringify(w3d5t2moods))<br>
+    w3d5t2printOutput();<br>
+    }<br>
+    const w3d5t2moodClear = ()=>{<br>
+    const w3d5t2moods = {<br>
+    w3d5t2moodGood: 0,<br>
+    w3d5t2moodBad: 0,<br>
+    }<br>
+    localStorage.setItem('w3d5t2moods', JSON.stringify(w3d5t2moods))<br>
+    w3d5t2moodGood = 0;<br>
+    w3d5t2moodBad = 0;<br>
+    w3d5t2printOutput()<br>
+    }<br>
+    <br>
+    w3d5t2btngood.addEventListener('click', w3d5t2addMoodGood)<br>
+    w3d5t2btnbad.addEventListener('click', w3d5t2addMoodBad)<br>
+    w3d5t2btnclear.addEventListener('click', w3d5t2moodClear)<br>
+    <br>
+    //w3d5t3<br>
+    const w3d5t3btnAddNumber = document.querySelector('.w3d5t3btnAddNumber')<br>
+    const w3d5t3output = document.querySelector('.w3d5t3output')<br>
+    <br>
+    let w3d5t3arr = JSON.parse(localStorage.getItem('w3d5t3')) || new Array();<br>
+    <br>
+    const w3d5t3printOutput = ()=>{<br>
+    let sum = 0;<br>
+    w3d5t3arr.forEach(num => sum+=Number(num));<br>
+    w3d5t3output.innerHTML = `&lt;p&gt;Podane liczny to: ${w3d5t3arr}&lt;/p&gt;<br>
+      &lt;p&gt;Suma tych liczb to: ${sum}&lt&lt;/p&gt;`;<br>
+    }<br>
+    w3d5t3printOutput();<br>
+    <br>
+    const w3d5t3 = ()=>{<br>
+    const w3d5t3number = prompt('Podaj liczbę')<br>
+    w3d5t3arr.push(w3d5t3number);<br>
+    localStorage.setItem('w3d5t3', JSON.stringify(w3d5t3arr));<br>
+    w3d5t3printOutput()<br>
+    }<br>
+    <br>
+    w3d5t3btnAddNumber.addEventListener('click', w3d5t3)<br>
+    <br>
+    <h2>plik index.html</h2>
+      &lt;body&gt;<br>
+      &lt;h3&gt;week3day5task123&lt&lt;/h3&gt;<br>
+    &lt;article&gt;<br>
+    &lt;h1&gt;Zadanie 1 &lt;/h1&gt;<br>
+    &lt;p>Jak się czujesz?&lt;/p&gt;<br>
+    &lt;menu&gt;<br>
+    &lt;button class="w3d5t1good"&gt;Dobrze&lt;/button&gt;<br>
+    &lt;button class="w3d5t1bad"&gt;Żle&lt;/button&gt;<br>
+    &lt;button class="w3d5t1clear"&gt;Wyczyść&lt;/button&gt;<br>
+    &lt;/menu&gt;<br>
+    &lt;p class="ww3d5t1output"&gt;0&lt;/p&gt;<br>
+    &lt;/article&gt;<br>
+    &lt;article&gt;<br>
+    &lt;h1&gt;Zadanie 2 &lt;/h1&gt;<br>
+    &lt;p&gt;Jak się czujesz?&lt;/p&gt;<br>
+    &lt;menu&gt;<br>
+    &lt;button class="w3d5t2btngood"&gt;Dobrze&lt;/button&gt;<br>
+    &lt;button class="w3d5t2btnbad"&gt;Żle&lt;/button&gt;<br>
+    &lt;button class="w3d5t2btnclear"&gt;Wyczyść&lt;/button&gt;<br>
+    &lt;/menu&gt;<br>
+    &lt;p class="w3d5t2output"&gt;0&lt;/p&gt;<br>
+    &lt;/article&gt;<br>
+    &lt;article&gt;<br>
+    &lt;h1&gt;Zadanie 3 &lt;/h1&gt;<br>
+    &lt;menu&gt;<br>
+    &lt;button class="w3d5t3btnAddNumber"&gt;Kliknij i podaj liczbę&lt;/button&gt;<br>
+      <br>
+    &lt;/menu&gt;<br>
+    &lt;p class="w3d5t3output"&gt;0&lt;/p&gt;<br>
+    &lt;/article&gt;<br>
+      &lt;script src="index.js"&gt;&lt;/script&gt;<br>
+      &lt;/body&gt;<br>
+      <br>
+      &lt;/html&gt;<br>
+  </code>
+  <br>
+
+</section>
+<section hidden>
   <h3>week3day3task1 kod</h3>
   <code>
     const isbnNumber = prompt('Podaj numer isbn. np. 9780553804577');<br>
@@ -27,7 +219,7 @@
   <p>Wynik z konsoli:</p>
   <p id='week3day3task1output'></p>
 </section>
-<section>
+<section hidden>
   <h3>week3day2task1 kod</h3>
   <code>
     const isbnNumber = prompt('Podaj numer isbn. np. 9780553804577'); <br>
