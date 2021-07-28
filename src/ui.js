@@ -1,26 +1,23 @@
-const buyBtns = [...document.querySelectorAll('[data-name]')];
-const basketUi = document.querySelector('.basket-list')
+const form = document.querySelector('form.calculator');
+const firstNumber = document.querySelector('#firstNumber');
+const secondNumber = document.querySelector('#secondNumber');
+const article = document.querySelector('article');
 
-const basket = new Basket();
-
-
-const createBasketUi = () => {
-    basketUi.innerText = '';
-    for (const oneProductInfo of basket.getBasketSummary()) {
-        const newLi = document.createElement('li');
-        newLi.innerText = oneProductInfo;
-        basketUi.appendChild(newLi);
-    }
-};
-
-const addProductToBasket = (e) => {
-    const name = e.target.dataset.name;
-    const price = Number(e.target.dataset.price);
-    const newProduct = new Product(name, price);
-    basket.add(newProduct);
-    createBasketUi();
+const createElement = (text) => {
+    const {operation, result} = text;
+    const p = document.createElement('p');
+    p.textContent = `Wynikiem ${operation} jest ${result != Math.floor(result) ? result.toFixed(2): result}`;
+    article.appendChild(p);
 }
 
-buyBtns.forEach(btn => {
-    btn.addEventListener('click', addProductToBasket)
-})
+function calculator(e) {
+    e.preventDefault();
+    article.textContent = "";
+    const calculatores = new Calc(firstNumber.value, secondNumber.value);
+    createElement(calculatores.add());
+    createElement(calculatores.subtract());
+    createElement(calculatores.multiply());
+    createElement(calculatores.divide());
+}
+
+form.addEventListener('submit', calculator)

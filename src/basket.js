@@ -1,68 +1,24 @@
-class Basket {
-    constructor() {
-        this.items = [];
-        this.totalValue = 0;
+class Calc {
+    constructor(a, b) {
+        // try catch walidacja
+        this.firstNumber = Number(a);
+        this.secondNumber = Number(b);
     }
 
-    add(product) {
-        this.items.push(product)
-        this.addToTotalValue(product);
+    add() {
+        return {operation: 'dodawania', result: this.firstNumber + this.secondNumber};
     }
 
-    addToTotalValue(product) {
-        this.totalValue += product.productPrice;
+    subtract() {
+        return {operation: 'odejmowania', result: this.firstNumber - this.secondNumber};
     }
 
-    removeFromTotalValue(product) {
-        this.totalValue -= product.productPrice;
+    multiply() {
+        return {operation: 'mnożenia', result: this.firstNumber * this.secondNumber};
     }
 
-    getTotalValue() {
-        return this.items.reduce((prev, curr) => curr.productPrice + prev, 0)
+    divide() {
+        // dodać walidację, dzielenie przez zero
+        return {operation: 'dzielenia', result: this.firstNumber / this.secondNumber};
     }
-
-    getBasketSummary() {
-        return this.items
-            .map((product, i) => `Produkt nr ${i + 1} to ${product.productName} w cenie ${product.productPrice}zł.`);
-
-    }
-
-    remove(no) {
-        this.removeFromTotalValue(this.items[no - 1]);
-        console.log(`usunięto produkt nr ${no}: ${this.items[no - 1].productName} w cenie ${this.items[no - 1].productPrice}`)
-        this.items.splice(no - 1, 1);
-
-    }
-
 }
-
-class Product {
-    constructor(productName, productPrice) {
-        this.productName = productName;
-        this.productPrice = productPrice;
-    }
-
-    setProductPrice(newPrice) {
-        this.productPrice = newPrice;
-    }
-
-}
-
-const oranges = new Product('Pomarańcze luz', 1)
-const cucumbers = new Product('Ogórki', 10)
-const shopBasket = new Basket();
-const tomatoes = new Product('Pomarańcze', 100)
-// shopBasket.add(oranges);
-// shopBasket.add(cucumbers);
-// shopBasket.add(oranges);
-// shopBasket.add(cucumbers);
-// shopBasket.add(oranges);
-// shopBasket.add(tomatoes);
-//
-// console.log(shopBasket.getTotalValue())
-// shopBasket.showBasket()
-// console.log(shopBasket.totalValue)
-// shopBasket.remove(2)
-// console.log('aaaa')
-// shopBasket.showBasket()
-// console.log(shopBasket.totalValue)
