@@ -1,9 +1,11 @@
 // 3# sposób
-// const dns = require('dns').promises;
-// (async ()=>{
-//     const data = await  dns.lookup('google.com');
-//     console.log(data.address);
-// })()
+const dns = require('dns').promises;
+(async ()=>{
+try {
+    const data = await  dns.lookup('google.com');
+    console.log(data.address);
+} catch (e) {console.log('aaa', e)}
+})()
 // wyszło216.58.215.78
 
 
